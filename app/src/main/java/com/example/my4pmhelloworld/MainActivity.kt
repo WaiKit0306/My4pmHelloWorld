@@ -1,20 +1,45 @@
 package com.example.my4pmhelloworld
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.view.View
+import android.view.inputmethod.InputMethodManager
+import android.widget.*
 
 class MainActivity : AppCompatActivity() {
+    lateinit var  diceImg :ImageView
+    lateinit var  numbText: TextView
+    lateinit var  nameText: EditText
+    lateinit var  playerNameTxt: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
+        setContentView(R.layout.activity_main)
+        diceImg = findViewById(R.id.diceImage)
+        numbText = findViewById(R.id.numberTxt)
+        nameText = findViewById(R.id.editPlayerNameET)
+        playerNameTxt= findViewById(R.id.playerName)
         val rollButton: Button = findViewById(R.id.rollBtn)
         rollButton.setOnClickListener{rollDice()}
+        val updateBtn: Button = findViewById(R.id.updateButton)
+        updateBtn.setOnClickListener{updateName(it)} //instance
     }
+
+    private fun updateName(view:View)
+    {
+        playerNameTxt.text = nameText.text
+
+        nameText.text.clear()
+        nameText.clearFocus()
+
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view.windowToken,0)
+    }
+
+
+
 
     private fun rollDice()
     {

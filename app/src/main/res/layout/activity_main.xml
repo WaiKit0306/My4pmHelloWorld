@@ -5,15 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_vertical"
+    android:layout_margin="@dimen/wide_margin_custom"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editPlayerNameET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:hint="@string/playerName"/>
+
+        <Button
+            android:id="@+id/updateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/updateButton" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/playerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:id="@+id/numberTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-         android:layout_gravity="center_horizontal"
-        android:text="@string/numberButton"
-         />
+        android:layout_gravity="center_horizontal"
+        android:text="@string/numberButton" />
 
 
     <ImageView
@@ -22,8 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         app:srcCompat="@drawable/empty_dice"
-        tools:srcCompat="@drawable/dice_1"
-        />
+        tools:srcCompat="@drawable/dice_1" />
 
     <Button
         android:id="@+id/rollBtn"
@@ -31,5 +58,22 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/rollButton" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/small_padding">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/scrollTxt"
+                style="@style/numStyle"
+                android:text="@string/rules" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

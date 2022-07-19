@@ -2,5 +2,7 @@
     <string name="app_name">My4pmHelloWorld</string>
     <string name="rollButton">Roll</string>
     <string name="numberButton">Roll Dice</string>
-
+    <string name="rules">The first player rolls all 5 dice at once. Any 1s are placed in the center and removed from game play. Any 2s rolled are passed to the player on her left; and 5s are passed to the player on her right. She continues to roll any remaining dice until she has either given away all her dice or fails to roll a 1, 2 or 5.</string>
+    <string name="playerName"></string>
+    <string name="updateButton">UPDATE</string>
 </resources>
